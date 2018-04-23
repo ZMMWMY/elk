@@ -1,0 +1,13 @@
+version: '2'
+services:
+  activity-demo:
+    build:
+      context: logs/
+    volumes:
+      - "/home/activity-demo/log/:/data/activity-service/log/"
+  filebeat:
+    build:
+      context: filebeat/
+    volumes:
+      - "/home/activity-demo/log/:/home/logs/"
+      - "/root/elk-6.2.3/temp/filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml"

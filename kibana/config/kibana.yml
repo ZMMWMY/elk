@@ -1,0 +1,8 @@
+server.name: kibana
+server.host: "0"
+elasticsearch.url: http://elasticsearch:9200
+
+## Custom configuration
+#
+elasticsearch.username: "kibanaserver"
+elasticsearch.password: "kibanaserver"

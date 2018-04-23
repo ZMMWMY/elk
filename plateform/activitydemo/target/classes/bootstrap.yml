@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: activity-demo
+logging:
+  path: /data/activity-service/log
