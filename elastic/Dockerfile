@@ -2,8 +2,6 @@ FROM elasticsearch:latest
 
 ADD search-guard/search-guard-6-6.2.3-22.0.zip /usr/share/elasticsearch/temp/
 
-RUN rm -rf plugins/x-pack
-
 COPY config/sg/ config/sg/
 COPY bin/ bin/
 

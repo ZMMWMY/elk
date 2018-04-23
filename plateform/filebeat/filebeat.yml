@@ -1,19 +1,13 @@
 filebeat.prospectors:
 - paths:
-    - /home/logs/*error*.log
+    - /home/logs/activity-service.error*.log
+    - /home/logs/activity-service.warn*.log
+    - /home/logs/activity-service.info*.log
   multiline:
       pattern: ^\d{4}
       negate: true
       match: after
   fields:
-    doc_type: error
-- paths:
-   - /home/logs/*info*.log
-  multiline:
-      pattern: ^\d{4}
-      negate: true
-      match: after
-  fields:
-    doc_type: info
+    doc_type: activity-service
 output.logstash: # 输出地址
   hosts: ["116.62.6.161:5044"]

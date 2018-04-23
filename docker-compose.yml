@@ -5,6 +5,8 @@ services:
       context: elastic/
     volumes: 
       - /root/elk-6.2.3/elastic/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - /root/elk-6.2.3/elastic/logs/:/usr/share/elasticsearch/logs/
+      - /root/elk-6.2.3/elastic/data/:/usr/share/elasticsearch/data/
     ports:
       - "9200:9200"
       - "9300:9300"
