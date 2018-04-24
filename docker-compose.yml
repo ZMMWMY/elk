@@ -25,8 +25,10 @@ services:
     build:
       context: logstash/
     volumes:
-      - "/root/elk-6.2.3/logstash/logstash.conf:/usr/share/logstash/pipeline/logstash.conf"
+      - "/root/elk-6.2.3/logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml"
+      - "/root/elk-6.2.3/logstash/data/:/usr/share/logstash/data/"
+      - "/root/elk-6.2.3/logstash/pipeline/:/usr/share/logstash/pipeline/"
     ports:
-      - "5044:5044"
+      - "5000:5000"
     depends_on:
       - elasticsearch
