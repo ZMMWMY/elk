@@ -32,3 +32,10 @@ services:
       - "5000:5000"
     depends_on:
       - elasticsearch
+  curator:
+    build:
+      context: curator/
+    volumes:
+      - "/root/elk-6.2.3/curator/config/:/etc/curator/"
+    depends_on:
+      - elasticsearch
